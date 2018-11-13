@@ -18,6 +18,8 @@ fn main() {
 		.whitelist_function("ec(x?)_(.*)")
 		.whitelist_type("ec(x?)_(.*)")
 		.whitelist_var("ec(x?)_(.*)")
+		.opaque_type("ecx_portt")
+		.opaque_type("ecx_redportt")
 		.generate()
 		.expect("Unable to generate bindings");
 
