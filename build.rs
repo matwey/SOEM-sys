@@ -15,6 +15,9 @@ fn main() {
 	let bindings = bindgen::Builder::default()
 		.clang_arg(format!("-I{}/include", dst.display()))
 		.header("wrapper.h")
+		.whitelist_function("ec(x?)_(.*)")
+		.whitelist_type("ec(x?)_(.*)")
+		.whitelist_var("ec(x?)_(.*)")
 		.generate()
 		.expect("Unable to generate bindings");
 
