@@ -4,6 +4,10 @@ version = "0.1.0"
 authors = ["Matwey V. Kornilov <matwey.kornilov@gmail.com>"]
 license = "GPL-2.0-only"
 description = "Rust FFI bindings for SOEM"
+repository = "https://github.com/matwey/SOEM-sys"
+
+[badges]
+travis-ci = { repository = "matwey/SOEM-sys", branch = "master" }
 
 [build-dependencies]
 cmake = "0.1"
