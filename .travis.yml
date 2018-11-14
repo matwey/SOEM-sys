@@ -1,10 +1,19 @@
 language: rust
 sudo: false
-
 cache: cargo
-
 rust:
-  - stable
-
+- stable
 script:
-  - cargo test
+- cargo test
+before_deploy:
+- cargo package
+deploy:
+  provider: script
+  script: cargo publish --token "$CRATES_IO_TOKEN"
+  skip_cleanup: true
+  on:
+    tags: true
+    all_branches: true
+env:
+  global:
+    secure: ve3EdIG+VJ5JgkUpo8GMREoiJrEbb4JmBZM48sIKM+IVB4or9mOR9V8nzdS5UyfaHw/2Ie83HR8lJ5VA2RaJ02tmCM0f1pZ5DftDTQu7y17otxd4vj1MJRPaacZ4fshh10oiX7v9AhH/Cxanr7Jau/RPSfYckQYhXeniW2wuaKTM3NgN2qPgHwEQ8SdsiFfWPm81fKMNgDiw4cfQT2kijTU5XhmsiVWYdpoWZcZtd7pdsq4wc25KLZtktaYXqf7Hgf6chsmQbYM+gx8nGjWcCvfKpF3hmXZFdRXS1FPXpUa+dgMs4wCYbe8xxJbjV0DZKh8vQf/QRvQ1j6r33OM61Al1mUfV3WZUsFFMOh1cb/iqsvCtFYIry+LBpG0pjbLVu2PsuiJcHxZHtJ9BS+1lgZTSkyZpesKRGxPXNFgEwthfO9PFgoimj6XCWyQbTe8oBdScxXdmK3AqGowK3jJli14/aYVPkEesihOWoftb9y9LZTFd22aiyjr2iioGTpP1j3lxvzUVUyXncDIZLRnqwC/8sw3PEbBxokWGNWMdvratjI2baCLU/x+7UxRgLXG7fC4vxndll3zpZQNOm0uNaKrU+zW4BXafvwZlwnAbAyHBbgzm3PCrOdnRLLGATW1wSRu60d+qBucUBOESswma79pYLzc7HWbCliSNEn0Ci6g=
