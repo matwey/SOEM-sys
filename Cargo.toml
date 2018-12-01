@@ -6,6 +6,7 @@ license = "GPL-2.0-only"
 description = "Rust FFI bindings for SOEM"
 documentation = "http://docs.rs/SOEM-sys"
 repository = "https://github.com/matwey/SOEM-sys"
+readme = "README.md"
 
 [badges]
 travis-ci = { repository = "matwey/SOEM-sys", branch = "master" }
