@@ -13,4 +13,4 @@ travis-ci = { repository = "matwey/SOEM-sys", branch = "master" }
 
 [build-dependencies]
 cmake = "0.1"
-bindgen = "0.42.2"
+bindgen = "0.53.2"
