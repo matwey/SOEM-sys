@@ -12,7 +12,7 @@ fn main() {
 
     let bindings = bindgen::Builder::default()
         .clang_arg(format!("-I{}/include", dst.display()))
-        .clang_arg("-ISOEM/soem")
+        .clang_arg(format!("-I{}/include/soem", dst.display()))
         .header("wrapper.h")
         .whitelist_function("ec(x?)_(.*)")
         .whitelist_type("ec_fmmu")
